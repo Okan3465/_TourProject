@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model List<Blog>
+
+
+<div class="packages">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage text_align_center ">
+                    <h2>Şehirler</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class=" col-md-6">
+                    <div id="ho_img" class="packages_box" data-aos="fade-right">
+                        <figure><img src="@item.Image" alt="#" /></figure>
+                        <div class="tuscany">
+                            <div class="tusc text_align_left">
+                                <div class="italy">
+                                    <h3>@item.BlogTitle</h3>
+                                    
+                                </div>
+                            </div>
+                            <p> @item.BlogContent.Substring(0,515)</p>
+                            <div class="tusc">
+                                <a class="read_more" href="/Blog/BlogReadDetails/@item.BlogID)">Devamını Oku</a>
+                             
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+                
+            </div>
+    </div>
+</div>
+
+
+
+
+@*<div class="row">*@
+
+
+    @*@foreach (var item in Model)
+    {*@
+
+
+        @*<div class=" col-md-6">
+            <div id="ho_img" class="packages_box" data-aos="fade-left">
+                <figure><img src="@item.Image" alt="#" /></figure>
+                <div class="tuscany">
+                    <div class="tusc text_align_left">
+                        <div class="italy">
+                            <h3>@item.BlogTitle</h3>
+
+                        </div>
+
+                    </div>
+                    <p>
+                        @item.BlogContent.Substring(0, 500)
+                    </p>
+                    <div class="tusc">
+                        <a class="read_more" href="/Blog/BlogReadDetails/@item.BlogID">Devamını Oku</a>
+                        <a class="read_more" href="Javascript:void(0)">Bilet Al</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="col-md-12">
+        <a class="read_more" href="Javascript:void(0)">Devamını Gör</a>
+    </div>
+
+</div>*@
+

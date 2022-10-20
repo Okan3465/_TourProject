@@ -1,0 +1,63 @@
+﻿@model List<Comment>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<body class="main-layout inner_page">
+
+    <div class="customers">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-12">
+                    <div class="titlepage text_align_center">
+
+                        <h2>Yorumlar </h2>
+                    </div>
+                </div>
+            </div>
+
+            @foreach (var item in Model)
+            {
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="myCarousel" class="carousel slide customers_banne" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="container-fluid">
+                                        <div class="carousel-caption relative">
+
+                                            <div class="test_box text_align_center border border-5">
+                                                <h4>@item.CommentTitle</h4>
+
+                                                <h3>@item.CommentContent</h3>
+                                                <i><img src="@item.CommentImage" alt="#" /></i>
+                                                <h4>Kullanıcı Adı:  @item.CommenUserName</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            }
+            <br /><br />
+
+            <a class="read_more" href="/Comment/AddComment">Yorum Yap</a>
+            <br />
+            <a class="read_more" href="/Comment/GetCommentsByCustomer">Benim Yorumum</a>
+
+
+        </div>
+    </div>
+ 
+</body>
+
+

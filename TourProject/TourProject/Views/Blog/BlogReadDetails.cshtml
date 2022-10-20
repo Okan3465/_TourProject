@@ -1,0 +1,29 @@
+﻿@model EntityLayer.Blog
+
+@{
+    ViewData["Title"] = "BlogReadDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage text_align_center">
+                    <h2>@Model.BlogTitle</h2>
+                </div>
+               
+            </div>
+            <div class="col-md-10 offset-md-1">
+                <div class="about_text text_align_center">
+                    <p>
+                        @Model.BlogContent
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

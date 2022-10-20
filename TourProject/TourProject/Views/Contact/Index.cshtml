@@ -1,0 +1,43 @@
+﻿@model Contact
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ">
+                <div class="titlepage text_align_center">
+                    <h2>İletişime Geçin</h2>
+                </div>
+            </div>
+            
+            <div class="col-md-8 offset-md-2">
+                <form method="post" id="request" class="main_form" asp-action="Index" asp-for="Contact">
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <input class="cont_in" placeholder="Ad Soyad" type="text"  name="ContactNAmeSurname">
+                            <span class="text-danger" asp-validation-for="ContactNameSurname"></span>
+                        </div>
+                        <div class="col-md-12">
+                            <input class="cont_in" placeholder="Email" type="text" name="ContactMail">
+                            <span class="text-danger" asp-validation-for="ContactMail"></span>
+                        </div>
+                        <div class="col-md-12">
+                            <input class="cont_in" placeholder="Konu" type="text" name="ContactSubject">
+                        </div>
+                        <div class="col-md-12">
+                            <textarea class="textarea2" style="color:#676767; " placeholder="Message" type="text" name="ContactMessage"> </textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <button  class="send_btnt">Gönder</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "AddComment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Comment
+
+<br />
+<h1 class="d-flex justify-content-center">Yeni Yorum Yap</h1>
+<br />
+
+
+
+@using (Html.BeginForm("AddComment", "Comment", FormMethod.Post))
+{
+
+
+    <div class="d-flex justify-content-center"> @Html.Label("Kullanıcı Adı")</div>
+    @Html.TextBoxFor(x => x.CommenUserName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CommenUserName, "", new { @class = "text-danger" })
+    <br />
+
+    <div class="d-flex justify-content-center"> @Html.Label("Yorum Başlığı")</div>
+    @Html.TextBoxFor(x => x.CommentTitle, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CommentTitle, "", new { @class = "text-danger" })
+
+    <br />
+  
+<div class="d-flex justify-content-center">   @Html.Label("Yorum İçeriği")</div>
+    @Html.TextBoxFor(x => x.CommentContent, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CommentContent, "", new { @class = "text-danger" })
+
+
+    <br />
+    
+
+    <br />
+    <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-outline-dark">Yorum Yap</button>
+
+    </div>
+
+}
+
+@*<div class="comment-top">
+        <h4>Bir Yorum Yapın</h4>
+        <br />
+        <div class="comment-bottom">
+            <form action="/Comment/AddComment/"  method="post">
+                <input class="form-control" type="text" name="CommenUserName" placeholder="Adınız Soyadınız:" required="">
+                <br />
+                <input class="form-control" type="text" name="CommentTitle" placeholder="Başlık" required="">
+
+                <br />
+                <textarea class="form-control" name="CommentContent" placeholder="Yorumunuz..." required=""></textarea>
+                <br />
+                <button type="submit" class="btn btn-primary submit">Yorum Yap</button>
+            </form>
+        </div>
+    </div>*@
+
+

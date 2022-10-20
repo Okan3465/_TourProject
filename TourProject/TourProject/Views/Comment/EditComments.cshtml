@@ -1,0 +1,33 @@
+﻿@model Comment
+@{
+    ViewData["Title"] = "EditComments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<div class="d-flex justify-content-center"> <h1>Blog Düzenleme Sayfası</h1></div>
+<br />
+
+@using (Html.BeginForm("EditComments", "Comment", FormMethod.Post))
+{
+<div class="d-flex justify-content-center"> @Html.Label("Yorum ID") </div>
+    @Html.TextBoxFor(x => x.CommentID, new { @class = "form-control" })
+
+    <br />
+    <div class="d-flex justify-content-center">  @Html.Label("Kullanıcı Adı")</div>
+    @Html.TextBoxFor(x => x.CommenUserName, new { @class = "form-control" })
+    <br />
+    <div class="d-flex justify-content-center">  @Html.Label("Kullanıcı Görseli")</div>
+    @Html.TextBoxFor(x => x.CommentImage, new { @class = "form-control" })
+    <br />
+    <div class="d-flex justify-content-center">   @Html.Label("Yorum Başlığı")</div>
+    @Html.TextBoxFor(x => x.CommentTitle, new { @class = "form-control" })
+    <br />
+    <div class="d-flex justify-content-center">  @Html.Label("Yorum İçeriği")</div>
+    @Html.TextAreaFor(x => x.CommentContent, 10, 3, new { @class = "form-control" })
+
+    <br />
+
+    <div class="d-flex justify-content-center">  <button class="btn btn-danger">Değişiklikleri Kaydet</button></div>
+   
+}
+

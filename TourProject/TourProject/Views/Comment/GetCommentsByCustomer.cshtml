@@ -1,0 +1,97 @@
+﻿@model List<Comment>
+@{
+    ViewData["Title"] = "GetCommentsByCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<div class="d-flex justify-content-center" > <h1>Benim Yorumlarım</h1> </div>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Yorum ID</th>
+        <th>Kullanıcı Adı</th>
+        <th>Yorum Başlığı</th>
+        <th>Kullanıcı Görseli</th>
+        <th>Yorum</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Düzenle</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CommentID</td>
+            <td>@item.CommenUserName</td>
+            <td>@item.CommentTitle</td>
+            <td>@item.CommentImage</td>
+            <td>@item.CommentContent</td>
+            <td>@item.CommentStatus</td>
+            <td><a class="btn btn-danger" href="/Comment/DeleteComment/@item.CommentID">Sil</a></td>
+            <td> <a class="btn btn-warning" href="/Comment/EditComments/@item.CommentID">Düzenle</a> </td>
+
+        </tr>
+    }
+</table>
+<div class="d-flex justify-content-center"><a class="btn btn-outline-dark" href="/Comment/AddComment">Yeni Yorum Ekle</a> </div>
+
+@*<body class="main-layout inner_page">
+
+        <div class="customers">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-sm-12">
+                        <div class="titlepage text_align_center">
+
+                            <h2>Yorumlar </h2>
+                        </div>
+                    </div>
+                </div>
+
+                @foreach (var item in Model)
+                {
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="myCarousel" class="carousel slide customers_banne" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="container-fluid">
+                                            <div class="carousel-caption relative">
+
+                                                <div class="test_box text_align_center border border-5">
+                                                    <h4>@item.CommentTitle</h4>
+
+                                                    <h3>@item.CommentContent</h3>
+                                                    <i><img src="@item.CommentImage" alt="#" /></i>
+                                                    <h4>Kullanıcı Adı:  @item.CommenUserName</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+
+                        <a class="btn btn-dark" href="/Comment/AddComment">Yeni Yorum </a>
+
+                        <a class="btn btn-danger" href="/Comment/DeleteComment/@item.CommentID">Yorumu Sil</a>
+                        <a class="btn btn-warning" href="/Comment/EditComments/@item.CommentID">Yorumu Düzenle</a>
+                        <a class="btn btn-success" href="/Comment/Index/">Tüm Yorumlar</a>
+                    </div>
+                }
+                <br /><br />
+
+
+            </div>
+        </div>
+
+    </body>*@
+
+

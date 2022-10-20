@@ -1,0 +1,26 @@
+﻿@model About
+
+
+<div class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage text_align_center">
+                    <h2>Hakkımızda</h2>
+                </div>
+            </div>
+            <div class="col-md-10 offset-md-1">
+                <div class="about_text text_align_center">
+                    <p>
+                        @if (Model != null)
+                        {
+                            @Model.AboutDetails1.Substring(0,1000)
+
+                        }
+                    </p>
+                    <a class="read_more" href="/About/Index">Devamını Oku</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
